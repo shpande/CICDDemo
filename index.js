@@ -6,7 +6,7 @@ exports.handler = async (event, context, callback) => {
     await createMsg(requestId, event).then(()=> {
         callback(null, {
             statusCode : 201,
-            body : '123',
+            body : '155',
             headers : {
                 'Access-Control-Allow-Origin' : '*'
             }
