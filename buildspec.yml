@@ -16,6 +16,8 @@ phases:
       - echo Build started on `date`
       - echo Compiling the Node.js code
       - npm run test
+      - zip function.zip index.js
+      - aws lambda update-function-code --function-name writeToDynamoDB --zip-file fileb://function.zip
   post_build:
     commands:
       - echo Build completed on `date`
