@@ -3,7 +3,7 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      nodejs: 14
+      nodejs: 12
     commands:
       - echo Installing Mocha...
       - npm install -g mocha
@@ -24,4 +24,4 @@ phases:
 # Include only the files required for your application to run.
 artifacts:
   files:
-    - src/index.js
+    - writeToDynamoDB/index.js
