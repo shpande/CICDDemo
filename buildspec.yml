@@ -17,7 +17,6 @@ phases:
       - echo Build started on `date`
       - cd $CODEBUILD_SRC_DIR
       - echo Compiling the Node.js code
-      - npm run-script build
       - zip function.zip index.js
       - aws lambda update-function-code --function-name writeToDynamoDB --zip-file fileb://function.zip
   post_build:
