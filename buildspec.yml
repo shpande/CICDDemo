@@ -14,8 +14,9 @@ phases:
   build:
     commands:
       - echo Build started on `date`
+      - cd $CODEBUILD_SRC_DIR
       - echo Compiling the Node.js code
-      - npm run test
+      - npm run-script build
       - zip function.zip index.js
       - aws lambda update-function-code --function-name writeToDynamoDB --zip-file fileb://function.zip
   post_build:
@@ -24,4 +25,4 @@ phases:
 # Include only the files required for your application to run.
 artifacts:
   files:
-    - writeToDynamoDB/index.js
+    - index.js
